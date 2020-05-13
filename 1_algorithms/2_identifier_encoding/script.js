@@ -1,8 +1,8 @@
 const timestamp = Math.floor(Date.now() / 1000);
 const a = timestamp.toString(16);
 
-const cluster = 10;
-const b = cluster.toString(16);
+const cluster = 5;
+const b = cluster < 10 ? '0' + cluster.toString(16) : cluster.toString(16);
 
 const type = 5;
 const c = type.toString(16);

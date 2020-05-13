@@ -1,10 +1,10 @@
 function checkLength(value, count) {
-  value = value.toString()
+    value = value.toString();
 
-  if (value.length < count)
-    value = ('0'.repeat(count) + value).slice(-count)
+    if (value.length < count)
+       value = ('0'.repeat(count) + value).slice(-count);
 
-  return value
+    return value;
 }
 
 let dateUs = prompt('Please, input date by US format mm/dd/yyyy, for example 5/30/2006');
