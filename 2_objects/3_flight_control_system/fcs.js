@@ -16,7 +16,7 @@ let flights = {
         seats: 28,
         businessSeats: 4,
         registrationStarts: makeTime(10, 0),
-        registartionEnds: makeTime(15, 0),
+        registrationEnds: makeTime(15, 0),
         tickets: [
             {
                 id: 'BH118-B50',
@@ -112,7 +112,7 @@ function buyTicket(flightName, buyTime, fullName, type = 0) {
     if (flight.tickets.length >= flight.seats)
         throw new Error('No seats available');
 
-    if (buyTime > flight.registartionEnds)
+    if (buyTime > flight.registrationEnds)
         throw new Error('Time away');
 
     const seat = findAvailableSeat(flight, type);

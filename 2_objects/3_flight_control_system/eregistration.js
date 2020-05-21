@@ -9,7 +9,7 @@
  * @param {string} fullName имя пассажира
  * @param {number} nowTime текущее время
  * @returns boolean успешна ли регистрация
- */
+*/
 function eRegistration(ticket, fullName, nowTime) {
     const flight = flights[ticket.split('-')[0]];
     if (!flight)
@@ -23,7 +23,7 @@ function eRegistration(ticket, fullName, nowTime) {
 
     if (nowTime < flight.registrationStarts)
       throw new Error(`Time is too early to registration `);
-    else if (nowTime > flight.registartionEnds)
+    else if (nowTime > flight.registrationEnds)
       throw new Error(`Time is up for registration`);
 
     ticket.registrationTime = nowTime;
