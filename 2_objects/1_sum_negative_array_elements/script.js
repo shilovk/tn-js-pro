@@ -15,8 +15,8 @@ const sumArrayElements = (array) => {
   return array.reduce((previous, current) => previous + current);
 }
 
-const createObject = (resource) => {
-  resource = resource.split(',').map(item => +item);
+const createObject = (string) => {
+  resource = string.split(',').map(item => +item);
   resource = getNegativeArrayElements(resource);
 
   const length = resource.length;
@@ -29,6 +29,5 @@ const createObject = (resource) => {
 }
 
 const result = createObject(prompt('Please, enter items separated by commas'));
-
 
 console.log(result);

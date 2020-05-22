@@ -5,17 +5,17 @@
  *  * проверка данных пассажира
  *  * электронную регистрацию можно произвести только в период от 5 до 1 часа до полета
  *
- * @param {string} ticket номер билета
+ * @param {string} ticketNumber номер билета
  * @param {string} fullName имя пассажира
  * @param {number} nowTime текущее время
  * @returns boolean успешна ли регистрация
 */
-function eRegistration(ticket, fullName, nowTime) {
-    const flight = flights[ticket.split('-')[0]];
+function eRegistration(ticketNumber, fullName, nowTime) {
+    const flight = flights[ticketNumber.split('-')[0]];
     if (!flight)
       throw new Error('Flight not found');
 
-    ticket = flight.tickets.find(item => item.id === ticket);
+    ticket = flight.tickets.find(item => item.id === ticketNumber);
     if (!ticket)
         throw new Error('Ticket not found');
     if (ticket.fullName !== fullName)

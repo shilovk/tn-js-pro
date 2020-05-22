@@ -4,12 +4,12 @@
   *  * проверка рейса
   *  * подсчет
   *
-  * @param {string} flight номер рейса
+  * @param {string} flightNumber номер рейса
   * @param {number} nowTime текущее время
   * @returns {Report} отчет
 */
-function flightReport(flight, nowTime) {
-  flight = flights[flight];
+function flightReport(flightNumber, nowTime) {
+  flight = flights[flightNumber];
 
   if (!flight)
     throw new Error('Flight not found');
