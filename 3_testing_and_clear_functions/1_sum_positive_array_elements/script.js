@@ -1,7 +1,7 @@
 /**
  * Filter only positive array elements
- * @param  {array} arr array
- * @return {array}     array without negatove elements
+ * @param  {number[]} arr array
+ * @return {number[]}     array without negatove elements
  */
 const getPositiveArray = (arr = []) => {
   if (!Array.isArray(arr))
@@ -12,7 +12,7 @@ const getPositiveArray = (arr = []) => {
 
 /**
  * Sum of array elements
- * @param  {array} arr array
+ * @param  {number[]} arr array
  * @return {number}    sum of array elements
  */
 const sumArray = (arr = []) => {
@@ -26,7 +26,7 @@ const sumArray = (arr = []) => {
 
 /**
  * Create object with count and sum of positive array elements
- * @param {array} arr      array
+ * @param {number[]} arr      array
  * @returns {ResultObject} object with count and sum
  */
 const sumOfPositive = (arr = []) => {
@@ -45,7 +45,7 @@ const sumOfPositive = (arr = []) => {
   }
 }
 
-const inputString = prompt('Please, enter items separated by commas');
-const inputArray = inputString.split(',').map(item => +item);
-
-console.table(sumOfPositive(inputArray));
+// const inputString = prompt('Please, enter items separated by commas');
+// const inputArray = inputString.split(',').map(item => +item);
+//
+// console.table(sumOfPositive(inputArray));

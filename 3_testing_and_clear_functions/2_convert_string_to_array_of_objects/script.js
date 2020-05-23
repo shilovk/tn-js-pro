@@ -3,7 +3,10 @@
  * @param  {string} word word
  * @return {number}      sum of word's chars code
  */
-const sumCharsCode = function(word) {
+function sumCharsCode(word) {
+  if (!(typeof word === 'string' || word instanceof String))
+    throw new Error('It is not a String');
+
   const charsArray = word.split('');
 
   return charsArray.reduce((sum, char) => sum + char.charCodeAt(0), 0);
@@ -14,8 +17,12 @@ const sumCharsCode = function(word) {
  * @param  {string} text    text
  * @return {ResultObject[]} array with ResultObject's elements
  */
-const wordStat = function(text) {
-  let arr = text.split(' ');
+function wordStat(text) {
+  if (!(typeof text === 'string' || text instanceof String))
+    throw new Error('It is not a String');
+
+  let arr = text.trim().split(' ');
+
   let resultArray = [];
 
   for (i = 0; i < arr.length; i++) {
@@ -35,6 +42,6 @@ const wordStat = function(text) {
   return [...resultArray];
 }
 
-const inputText = prompt('Please, enter a string for converting to array');
+// const inputText = prompt('Please, enter a string for converting to array');
 
-console.log(wordStat(inputText));
+// console.log(wordStat(inputText));
