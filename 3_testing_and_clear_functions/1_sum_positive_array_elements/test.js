@@ -1,3 +1,7 @@
+const assert = require('assert');
+// const chai = require('chai');
+const { sumOfPositive } = require('./script.js');
+
 describe('sumOfPositive', () => {
   describe('with valid input data', () => {
     it ('[1, 2, 3, -1]', () => {

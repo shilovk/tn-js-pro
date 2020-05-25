@@ -40,10 +40,10 @@ const sumOfPositive = (arr = []) => {
     sum: sumArray(positiveArray),
   }
 
-  return {
-    ...resultObject,
-  }
+  return resultObject
 }
+
+module.exports = { sumOfPositive };
 
 // const inputString = prompt('Please, enter items separated by commas');
 // const inputArray = inputString.split(',').map(item => +item);

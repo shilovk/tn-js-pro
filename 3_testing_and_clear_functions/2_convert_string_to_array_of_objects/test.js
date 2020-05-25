@@ -1,3 +1,7 @@
+const assert = require('assert');
+// const chai = require('chai');
+const { sumCharsCode, wordStat } = require('./script.js');
+
 describe('Convert string to array of objects', () => {
   describe('sumCharsCode', () => {
     describe('with valid input data', () => {
@@ -14,13 +18,13 @@ describe('Convert string to array of objects', () => {
 
     describe('with invalid input data', () => {
       it ('[]', () => {
-        assert.throws(() => { sumCharsCode([]) }, Error, /It is not a String/)
+        assert.throws(function() { sumCharsCode([]) }, Error, /It is not a String/)
       });
       it ('123', () => {
-        assert.throws(() => { sumCharsCode(123) }, Error, /It is not a String/)
+        assert.throws(function() { sumCharsCode(123) }, Error, /It is not a String/)
       });
       it ("null", () => {
-        assert.throws(() => { sumCharsCode(123) }, Error, /It is not a String/)
+        assert.throws(function() { sumCharsCode(123) }, Error, /It is not a String/)
 
       });
     });
