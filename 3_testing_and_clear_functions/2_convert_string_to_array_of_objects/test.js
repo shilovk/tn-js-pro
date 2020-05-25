@@ -1,6 +1,6 @@
+const { sumCharsCode, wordStat } = require('./script.js');
 const assert = require('assert');
 // const chai = require('chai');
-const { sumCharsCode, wordStat } = require('./script.js');
 
 describe('Convert string to array of objects', () => {
   describe('sumCharsCode', () => {

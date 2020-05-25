@@ -38,7 +38,3 @@ function wordStat(text) {
 }
 
 module.exports = { sumCharsCode, wordStat };
-
-// const inputText = prompt('Please, enter a string for converting to array');
-
-// console.log(wordStat(inputText));

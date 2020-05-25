@@ -44,8 +44,3 @@ const sumOfPositive = (arr = []) => {
 }
 
 module.exports = { sumOfPositive };
-
-// const inputString = prompt('Please, enter items separated by commas');
-// const inputArray = inputString.split(',').map(item => +item);
-//
-// console.table(sumOfPositive(inputArray));
