@@ -1,3 +1,8 @@
+/**
+ * Print node information
+ * @param {HTMLNode} node html node
+ * @param {number} deep nesting level of node
+ */
 function printNode(node, deep) {
   if (!node) return;
 
@@ -9,6 +14,11 @@ function printNode(node, deep) {
   console.log(result);
 }
 
+/**
+ * Export information of nodes with all childes
+ * @param {HTMLNode[]} nodes html nodes array
+ * @param {number} deep nesting level of nodes
+ */
 function showNodes(nodes, deep = 0) {
   if (nodes.length == 0) return;
 
@@ -21,6 +31,11 @@ function showNodes(nodes, deep = 0) {
   }
 }
 
+/**
+ * Export information of node with all childes
+ * @param {HTMLNode} parent html parent node
+ * @param {number} deep nesting level of node
+ */
 function showNodesOf(parent, deep = 0) {
   if (!parent || !parent.childNodes) return;
 
@@ -30,6 +45,11 @@ function showNodesOf(parent, deep = 0) {
   }
 }
 
+/**
+ * Print element information
+ * @param {HTMLElement} el html element
+ * @param {number} deep nesting level of element
+ */
 function printElement(el, deep) {
   if (!el) return;
 
@@ -40,6 +60,11 @@ function printElement(el, deep) {
   console.log(result);
 }
 
+/**
+ * Export information of elements with all children
+ * @param {HTMLElement[]} elements html elements array
+ * @param {number} deep nesting level of elements
+ */
 function showElements(elements, deep = 0) {
   if (elements.length == 0) return;
 
