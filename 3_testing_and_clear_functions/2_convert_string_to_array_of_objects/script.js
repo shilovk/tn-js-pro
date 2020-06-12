@@ -21,20 +21,12 @@ function wordStat(text) {
   if (!(typeof text === 'string'))
     throw new Error('It is not a String');
 
-  let arr = text.trim().split(' ');
-
-  let resultArray = [].map.call(arr, (word) => {
-    /**
-     * @type {ResultObject}
-     */
-    const resultObject = {
+  return text.trim()
+    .split(' ')
+    .map((word) => ({
       word,
       sum: sumCharsCode(word),
-    };
-    return resultObject;
-  });
-
-  return resultArray;
+    }));
 }
 
 module.exports = { sumCharsCode, wordStat };
