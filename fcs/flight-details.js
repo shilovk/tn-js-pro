@@ -77,7 +77,7 @@ function showTicket(ticket) {
   info.push({ field: 'number', value: ticket.id });
   info.push({ field: 'seat', value: ticket.seat });
   info.push({ field: 'full name', value: ticket.fullName });
-  info.push({ field: 'registration time', value: ticket.registrationTime });
+  info.push({ field: 'registration time', value: ticket.registrationTime != null });
   const container = document.createElement('div');
 
   info.forEach(data => {
