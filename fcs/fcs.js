@@ -4,8 +4,8 @@
  * @type {World} Список всех рейсов
  */
 let bigWorld = {
-    flights: {},
-    history: [],
+  flights: {},
+  history: [],
 };
 
 /**
