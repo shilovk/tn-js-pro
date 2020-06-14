@@ -14,8 +14,6 @@ function flightDetails(world, flightName) {
   if (!flight)
     throw new Error('Flight not found');
 
-  const report = flightReport(world, flightName, Date.now());
-
   const container = document.createElement('div');
   container.id = 'flight-details';
   container.append(showFlight(flight));
