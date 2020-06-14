@@ -59,9 +59,28 @@ function showTickets(tickets) {
   title.textContent = 'Tickets';
   container.append(title);
 
-  tickets.forEach(ticket => {
-    container.append(showTicket(ticket));
+  const table = document.createElement('table');
+  const header = document.createElement('tr');
+  const fields = ['id', 'seat', 'fullName', 'registrationTime'];
+  fields.forEach(field => {
+    const th = document.createElement('th');
+    th.append(document.createTextNode(field));
+    header.append(th);
   });
+  table.append(header);
+
+  tickets.forEach(ticket => {
+    const tr = document.createElement('tr');
+    fields.forEach(field => {
+      const td = document.createElement('td');
+      const value = document.createTextNode(ticket[field] || 'false');
+      td.append(value);
+      tr.append(td);
+    });
+    table.append(tr);
+  });
+  container.append(table);
+
   return container;
 };
 
