@@ -6,8 +6,6 @@
  * @param {string} flightName название рейса
  */
 function flightDetails(world, flightName) {
-  // if (typeof world !== 'World') throw new Error('World is not correct');
-
   if (typeof flightName !== 'string') throw new Error('Flight name is not a string');
 
   const flight = world.flights[flightName];
@@ -28,12 +26,13 @@ function flightDetails(world, flightName) {
  * @returns {HTMLelement} div с информацией о рейсе
  */
 function showFlight(flight) {
-  let info = [];
-  info.push({ field: 'name', value: flight.name });
-  info.push({ field: 'seats', value: flight.seats });
-  info.push({ field: 'business seats', value: flight.businessSeats });
-  info.push({ field: 'registration starts', value: ruDate(flight.registrationStarts) });
-  info.push({ field: 'registration ends', value: ruDate(flight.registrationEnds) });
+  let info = [
+    { field: 'name', value: flight.name },
+    { field: 'seats', value: flight.seats },
+    { field: 'business seats', value: flight.businessSeats },
+    { field: 'registration starts', value: ruDate(flight.registrationStarts) },
+    { field: 'registration ends', value: ruDate(flight.registrationEnds) }
+  ];
 
   const container = document.createElement('div');
   const title = document.createElement('h3');
@@ -90,11 +89,12 @@ function showTickets(tickets) {
  * @returns {HTMLelement} div с информацией о билете
  */
 function showTicket(ticket) {
-  let info = [];
-  info.push({ field: 'number', value: ticket.id });
-  info.push({ field: 'seat', value: ticket.seat });
-  info.push({ field: 'full name', value: ticket.fullName });
-  info.push({ field: 'registration time', value: ticket.registrationTime != null });
+  let info = [
+    { field: 'number', value: ticket.id },
+    { field: 'seat', value: ticket.seat },
+    { field: 'full name', value: ticket.fullName },
+    { field: 'registration time', value: ticket.registrationTime != null }
+  ];
   const container = document.createElement('div');
 
   info.forEach(data => {
