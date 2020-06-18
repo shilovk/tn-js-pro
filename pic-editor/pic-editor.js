@@ -27,8 +27,8 @@ const COLORS = [
 function createEditor(picEditorId, cellSize) {
   const canvasEl = document.querySelector(`#${picEditorId} #canvas`)
   const paletteEl = document.querySelector(`#${picEditorId} #palette`);
-  const allColorsEl = document.querySelector(`#${picEditorId} #palette #all-colors`);
-  const activeColorEl = document.querySelector(`#${picEditorId} #palette #active-color`);
+  const allColorsEl = paletteEl.querySelector('#all-colors');
+  const activeColorEl = paletteEl.querySelector('#active-color');
 
   if (!canvasEl || !paletteEl || !allColorsEl || !activeColorEl) return;
 
