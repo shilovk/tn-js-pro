@@ -21,4 +21,6 @@ console.log(bigWorld);
 let res2 = buyTicket(bigWorld, 'BH118', makeTime(5, 10), 'Ivanov I. I.');
 console.log(bigWorld, res2.world);
 
-let details = flightDetails(bigWorld, 'BH118');
+flightDetails(bigWorld, 'BH118');
+
+buyTicketFormInit(bigWorld);

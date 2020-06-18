@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#canvas {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+#canvas td {
+  border: 1px solid rgb(116, 116, 116);
+  cursor: pointer;
+  background-color: white;
+}
+
+#canvas td div {
+  padding-bottom: 100%;
+}
+
+#palette {
+  position: absolute;
+  z-index: 9;
+  min-width: 50%;
+  top: 70%;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 0 4px 0 rgb(116, 116, 116);
+  padding: 5px;
+  box-sizing: border-box;
+  resize: both;
+}
+
+#active-color {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  color: black;
+  box-shadow: 0 0 2px 0 rgb(116, 116, 116);
+  background-color: white;
+}
+
+#all-colors {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  text-align: center;
+}
+
+#all-colors div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 0 2px 0 rgb(116, 116, 116);
+  cursor: pointer;
+}
