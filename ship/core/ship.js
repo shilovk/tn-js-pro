@@ -22,7 +22,7 @@ function Ship(name, model, position = new Position(0, 0)) {
 
     if (this._isAnchorDroped) throw new Error('Ship must not be anchored');
 
-    this._distance += this._calcDistance(this.position, newPosition);
+    this._distance += newPosition.calcDistanceFrom(this.position);
     this.position = newPosition;
 
     return true;
@@ -69,15 +69,4 @@ function Ship(name, model, position = new Position(0, 0)) {
   this.riseAnchor = () => {
     return this._isAnchorDroped = false;
   };
-
-  /**
-   * @param {Position} oldPosition
-   * @param {Position} newPosition
-   */
-  this._calcDistance = function (oldPosition, newPosition) {
-    const {x: x1, y: y1} = oldPosition;
-    const {x: x2, y: y2} = newPosition;
-
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-  }
-}
+};
