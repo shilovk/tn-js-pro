@@ -5,9 +5,12 @@
  * @param {Position} position
  * @param {Ship[]} ships
  */
-class SailingDock extends Dock {
-  constructor(position = new Position(0, 0), ships = []) {
-    super(position, ships);
-    this._shipType = SailingShip;
-  };
+function SailingDock(position = new Position(0, 0), ships = []) {
+  Dock.call(this);
+  this.position = position;
+  this.ships = ships;
+  this._shipType = SailingShip;
 };
+
+SailingDock.prototype = Object.create(Dock.prototype);
+SailingDock.prototype.constructor = Dock;

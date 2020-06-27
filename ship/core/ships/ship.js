@@ -24,9 +24,9 @@ Ship.prototype = {
    * @param {number} y
    */
   moveTo: function(x, y) {
-    const newPosition = new Position(x, y);
-
     if (this._isAnchorDroped) throw new Error('Ship must not be anchored');
+
+    const newPosition = new Position(x, y);
 
     this._distance += newPosition.calcDistanceFrom(this.position);
     this.position = newPosition;
@@ -55,7 +55,7 @@ Ship.prototype = {
       case 'w':
         x--;
         break;
-    }
+    };
 
     return this.moveTo(x, y);
   },

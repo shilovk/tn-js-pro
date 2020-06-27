@@ -8,10 +8,15 @@
  * @param {number} mastCount
  * @param {number} sailArea
  */
-class SailingShip extends Ship {
-  constructor(name, model, position = new Position(0, 0), color = 'white', damage = 0, mastCount = 1, sailArea) {
-    super(name, position, color, damage);
-    this.mastCount = mastCount;
-    this.sailArea = sailArea;
-  };
+function SailingShip(name, model, position = new Position(0, 0), color = 'white', damage = 0, mastCount = 1, sailArea) {
+  Ship.call(this);
+  this.name = name;
+  this.model = model;
+  this.position = position;
+  this.color = color;
+  this.mastCount = mastCount;
+  this.sailArea = sailArea;
 };
+
+SailingShip.prototype = Object.create(Ship.prototype);
+SailingShip.prototype.constructor = Ship;

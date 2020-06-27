@@ -8,10 +8,16 @@
  * @param {number} power
  * @param {string} material
  */
-class MotorShip extends Ship {
-  constructor(name, model, position = new Position(0, 0), color = 'white', damage = 0, power, material = 'steel') {
-    super(name, position, color, damage);
-    this.power = power;
-    this.material = material;
-  };
+function MotorShip(name, model, position = new Position(0, 0), color = 'white', damage = 0, power, material = 'steel') {
+  Ship.call(this);
+  this.name = name;
+  this.model = model;
+  this.position = position;
+  this.color = color;
+  this.damage = damage;
+  this.power = power;
+  this.material = material;
 };
+
+MotorShip.prototype = Object.create(Ship.prototype);
+MotorShip.prototype.constructor = Ship;

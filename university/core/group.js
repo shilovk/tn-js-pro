@@ -7,7 +7,7 @@
  * @property {Student[]} studentList
  */
 function Group(number) {
-  // if (typeof number != 'number') return new Error('Group number is not a number');
+  // if (typeof number != 'number') throw new Error('Group number is not a number');
 
   this.number = number;
   this.studentList = [];
@@ -25,7 +25,7 @@ function Group(number) {
    * @param {Student} student
    */
   this.addStudent = function(student) {
-    if (!(student instanceof Student)) return new Error('Student is incorrect');
+    if (!(student instanceof Student)) throw new Error('Student is incorrect');
 
     this.studentList.push(student);
   };
