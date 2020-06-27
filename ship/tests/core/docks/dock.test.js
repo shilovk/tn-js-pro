@@ -11,7 +11,6 @@ describe('Dock', () => {
   });
 
   describe('moor', () => {
-
     describe('success', () => {
       let otherShip = new Ship('Shustriy', '456', dockPosition);
 
@@ -24,7 +23,7 @@ describe('Dock', () => {
       it('ship drops anchor', () => {
         dock.moor(otherShip);
 
-        assert.isTrue(otherShip.isAnchorDroped())
+        assert.isTrue(otherShip.isAnchorDroped());
       });
     });
 

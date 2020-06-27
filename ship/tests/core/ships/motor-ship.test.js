@@ -4,7 +4,7 @@ describe('MotorShip', () => {
     motorShip = new MotorShip('Zlatoust', '123');
   });
 
-  it('instance of Ship', () => {
+  it('is instance of Ship', () => {
     assert.instanceOf(motorShip, Ship);
   });
 
