@@ -11,7 +11,7 @@ function Position(x, y) {
    * @param {Object} {x, y}
    */
   this.equalXY = function({x, y}) {
-   return this.x == x && this.y === y;
+   return this.x === x && this.y === y;
  };
 
  /**
@@ -22,5 +22,5 @@ function Position(x, y) {
    const {x: oldX, y: oldY} = oldPosition;
 
    return Math.sqrt(Math.pow(this.x - oldX, 2) + Math.pow(this.y - oldY, 2));
- }
-}
+ };
+};

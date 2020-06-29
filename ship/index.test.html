@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests for Ships and Docks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <!-- добавляем фреймворк тестирования mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <!-- добавим chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // chai предоставляет большое количество функций. Объявим assert глобально
+        var assert = chai.assert;
+        var expect = chai.expect;
+    </script>
+  </head>
+  <body>
+    <!-- scripts -->
+    <script src="shared/position.js"></script>
+    <script src="core/ships/ship.js"></script>
+    <script src="core/ships/motor-ship.js"></script>
+    <script src="core/ships/sailing-ship.js"></script>
+    <script src="core/docks/dock.js"></script>
+    <script src="core/docks/motor-dock.js"></script>
+    <script src="core/docks/sailing-dock.js"></script>
+    <!-- tests -->
+    <script src="tests/shared/position.test.js"></script>
+    <script src="tests/core/ships/ship.test.js"></script>
+    <script src="tests/core/ships/motor-ship.test.js"></script>
+    <script src="tests/core/ships/sailing-ship.test.js"></script>
+    <script src="tests/core/docks/dock.test.js"></script>
+    <script src="tests/core/docks/motor-dock.test.js"></script>
+    <script src="tests/core/docks/sailing-dock.test.js"></script>
+
+    <!-- элемент с id="mocha" будет содержать результаты тестов -->
+    <div id="mocha"></div>
+
+    <!-- запускаем тесты! -->
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
