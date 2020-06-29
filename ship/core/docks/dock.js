@@ -16,14 +16,17 @@ Dock.prototype = {
    * @param {Ship} ship
    */
   moor: function(ship) {
-    if (!!this.ships.find(s => ship === s))
+    if (!!this.ships.find(s => ship === s)) {
       throw new Error('Ship is already in the Dock');
+    };
 
-    if (!this._checkShipType(ship))
+    if (!this._isShipSupported(ship)) {
       throw new Error(`Ship is not supported for this Dock`);
+    };
 
-    if (!this.position.equalXY(ship.position))
+    if (!this.position.equalXY(ship.position)) {
       throw new Error('Ship should be moved to the Dock');
+    };
 
     ship.dropAnchor();
     return this.ships.push(ship);
@@ -33,20 +36,17 @@ Dock.prototype = {
    * @param {Ship} ship
   */
   unmoor: function(ship) {
-    const index = this.ships.findIndex(s => ship === s);
-
-    if (index < 0)
-      throw new Error('Ship is not in Dock');
+    this._isShipInDock(ship);
 
     ship.riseAnchor();
-    return this.ships.splice(index, 1);
+    return this.ships.splice(this.ships.indexOf(ship), 1);
   },
 
   /**
    * @param {Ship} ship
    */
   repair: function(ship) {
-    if (this.ships.findIndex(s => ship === s) < 0) throw new Error('Ship is not in Dock');
+    this._isShipInDock(ship);
 
     return ship.damage = 0;
   },
@@ -56,9 +56,11 @@ Dock.prototype = {
    * @param {string} color
    */
   paint: function(ship, color) {
-    if (this.ships.findIndex(s => ship === s) < 0) throw new Error('Ship is not in Dock');
+    this._isShipInDock(ship);
 
-    if (!color || typeof color !== 'string') throw new Error('Color is not correct');
+    if (!color || typeof color !== 'string') {
+      throw new Error('Color is not correct');
+    };
 
     return ship.color = color;
   },
@@ -67,7 +69,7 @@ Dock.prototype = {
    * @param {Ship} ship
    */
   change: function(ship) {
-    if (this.ships.findIndex(s => ship === s) < 0) throw new Error('Ship is not in Dock');
+    this._isShipInDock(ship);
 
     return new Ship(ship.name, ship.model, ship.position, ship.color, 0);
   },
@@ -75,7 +77,18 @@ Dock.prototype = {
   /**
    * @param {Ship} ship
    */
-  _checkShipType: function(ship) {
+  _isShipSupported: function(ship) {
     return ship instanceof this._shipType;
   },
+
+  /**
+   * @param {Ship} ship
+   */
+  _isShipInDock: function(ship) {
+    if (!this.ships.find(s => ship === s)) {
+      throw new Error('Ship is not in Dock');
+    };
+
+    return true;
+  }
 };
