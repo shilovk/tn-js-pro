@@ -25,20 +25,21 @@ class HtmlElement {
       throw new Error('Variables is not correct');
     };
 
-    for (const variable in newVariables) {
-      const value = newVariables[variable];
+    const setVariable = (memo, variable) => {
+      let value = newVariables[variable];
 
       if (!(typeof value === 'function' || typeof value === 'string')) {
         throw new Error(`Value ${value} of ${variable} is not string or function`);
       };
 
       if (typeof value === 'function') {
-        value = Object.call(value);
+        value = value.call();
       };
 
       this._template = this._template.replace(new RegExp(`{{${variable}}}`, 'g'), value);
     };
 
+    Object.keys(newVariables).reduce(setVariable, '');
     this._parseTemplate();
   }
 
