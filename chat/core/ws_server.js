@@ -65,6 +65,9 @@ wsConnection.on("connection", ws => {
         sendToChannel(message.channel, user.name, message.text);
         return;
       case "exitChat":
+        user.logoutChannel(message.channel);
+        sendToChannel(message.channel, user.name,
+        message.command);
         ws.close();
         return;
       default:
